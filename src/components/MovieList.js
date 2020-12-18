@@ -2,23 +2,29 @@
 import React from "react";
 import Movie from "./Movie";
 
-const MovieList = ({ props, setNomineeList, nomineeList }) => {
+const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
   let movieList = [];
   let displayMovies = [];
+  console.log(setDisplayError);
   if (props) {
     movieList = props.Search;
     if (movieList) {
       displayMovies = movieList.map((movie) => {
         return (
           <div key={movie.imdbID} className="flex flex-wrap items-center">
-            <Movie movie={movie} />
             <button
-              onClick={() => setNomineeList([...nomineeList, movie])}
-              disabled={nomineeList.includes(movie) || nomineeList.length >= 5}
-              className="m-2 px-1 py-1 text-xs font-small leading-6 text-center text-black uppercase transition bg-transparent border-2 border-black rounded-full ripple hover:bg-gray-100 focus:outline-none"
+              onClick={() =>
+                nomineeList.length === 5
+                  ? setDisplayError(true)
+                  : setNomineeList([...nomineeList, movie])
+              }
+              className={`m-2 px-1 py-1 text-xs font-small leading-6 text-center text-black uppercase transition bg-${
+                nomineeList.includes(movie) ? `red-500` : `transparent`
+              } border-2 border-black rounded-full ripple focus:outline-none`}
             >
               Nominate
             </button>
+            <Movie movie={movie} />
           </div>
         );
       });

@@ -7,8 +7,6 @@ const SearchBar = ({ setMovieList }) => {
   const debounced = useDebouncedCallback((value) => {
     if (value) {
       fetchData(value, setMovieList);
-    } else {
-      setMovieList([]);
     }
   }, 1000);
 

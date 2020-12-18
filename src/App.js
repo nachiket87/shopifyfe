@@ -10,13 +10,16 @@ const App = () => {
     <div className="App">
       <div className="container mt-5">
         <SearchBar setMovieList={setMovieList} />
-        <div className="flex">
+        <div className="flex flex-wrap">
           <MovieList
             props={movieList}
             setNomineeList={setNomineeList}
             nomineeList={nomineeList}
           />
-          <NomineeList props={nomineeList} />
+          <NomineeList
+            nomineelist={nomineeList}
+            setNomineeList={setNomineeList}
+          />
         </div>
       </div>
     </div>

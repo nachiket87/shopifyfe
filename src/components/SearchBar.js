@@ -4,13 +4,13 @@ import fetchData from "../utilities/fetchData";
 import { useDebouncedCallback } from "use-debounce";
 
 const SearchBar = ({ setMovieList }) => {
-  const debounced = useDebouncedCallback(
-    // function
-    (value) => {
+  const debounced = useDebouncedCallback((value) => {
+    if (value) {
       fetchData(value, setMovieList);
-    },
-    1000
-  );
+    } else {
+      setMovieList([]);
+    }
+  }, 1000);
 
   return (
     <input

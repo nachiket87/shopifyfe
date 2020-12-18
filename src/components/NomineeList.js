@@ -2,7 +2,7 @@
 import React from "react";
 import Movie from "./Movie";
 
-const NomineeList = ({ nomineelist, setNomineeList }) => {
+const NomineeList = ({ nomineelist, setNomineeList, setDisplayError }) => {
   let nominatedMovies = [];
   const removeNominee = (movie) => {
     let newList = nomineelist.filter((nominee) => {
@@ -15,10 +15,10 @@ const NomineeList = ({ nomineelist, setNomineeList }) => {
       return (
         <div key={movie.imdbID} className="flex flex-wrap items-center">
           <button
-            onClick={() => removeNominee(movie)}
-            className="m-2 px-1 py-1 text-xs font-small leading-6 text-center text-black uppercase transition bg-transparent border-2 border-black rounded-full ripple hover:bg-gray-100 focus:outline-none"
+            onClick={() => [removeNominee(movie), setDisplayError(false)]}
+            className="m-3 p-1 rounded-full border-2 border-black flex items-center justify-center"
           >
-            Remove
+            X
           </button>
           <Movie movie={movie} />
         </div>

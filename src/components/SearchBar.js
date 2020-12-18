@@ -8,14 +8,14 @@ const SearchBar = ({ setMovieList }) => {
     if (value) {
       fetchData(value, setMovieList);
     }
-  }, 1000);
+  }, 200);
 
   return (
     <input
-      className="w-full border-2 border-grey-500 rounded-full py-4 px-6 text-gray-700 focus:outline-none"
+      className="w-100 lg:w-full bg-purple-white shadow rounded border-0 p-3"
       id="search"
       type="text"
-      placeholder="Search"
+      placeholder="Type the name of a movie..."
       onChange={(e) => debounced.callback(e.target.value)}
     />
   );

@@ -16,7 +16,16 @@ const App = () => {
 
   return (
     <div className="container mt-5">
-      <span className="prose prose-xl m-3">The Shoppies</span>
+      <span
+        className="prose prose-xl m-3"
+        onClick={() => [
+          setMovieList([]),
+          setNomineeList([]),
+          setDisplayError(false),
+        ]}
+      >
+        The Shoppies
+      </span>
       <SearchBar setMovieList={setMovieList} />
       <div className="flex flex-wrap">
         <MovieList
@@ -28,6 +37,7 @@ const App = () => {
         <NomineeList
           nomineelist={nomineeList}
           setNomineeList={setNomineeList}
+          setDisplayError={setDisplayError}
         />
       </div>
       <div

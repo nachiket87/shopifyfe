@@ -5,7 +5,6 @@ import Movie from "./Movie";
 const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
   let movieList = [];
   let displayMovies = [];
-  console.log(setDisplayError);
   if (props) {
     movieList = props.Search;
     if (movieList) {
@@ -18,8 +17,11 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
                   ? setDisplayError(true)
                   : setNomineeList([...nomineeList, movie])
               }
+              disabled={nomineeList.includes(movie)}
               className={`m-2 px-1 py-1 text-xs font-small leading-6 text-center text-black uppercase transition bg-${
-                nomineeList.includes(movie) ? `red-500` : `transparent`
+                nomineeList.includes(movie)
+                  ? `green-200 line-through`
+                  : `transparent`
               } border-2 border-black rounded-full ripple focus:outline-none`}
             >
               Nominate

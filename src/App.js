@@ -7,20 +7,18 @@ const App = () => {
   const [movieList, setMovieList] = useState();
   const [nomineeList, setNomineeList] = useState([]);
   return (
-    <div className="App">
-      <div className="container mt-5">
-        <SearchBar setMovieList={setMovieList} />
-        <div className="flex flex-wrap">
-          <MovieList
-            props={movieList}
-            setNomineeList={setNomineeList}
-            nomineeList={nomineeList}
-          />
-          <NomineeList
-            nomineelist={nomineeList}
-            setNomineeList={setNomineeList}
-          />
-        </div>
+    <div className="container mt-5">
+      <SearchBar setMovieList={setMovieList} />
+      <div className="flex flex-wrap">
+        <MovieList
+          props={movieList}
+          setNomineeList={setNomineeList}
+          nomineeList={nomineeList}
+        />
+        <NomineeList
+          nomineelist={nomineeList}
+          setNomineeList={setNomineeList}
+        />
       </div>
     </div>
   );

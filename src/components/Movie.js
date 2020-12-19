@@ -5,9 +5,7 @@ const Movie = ({ movie }) => {
   const { Title, Year } = movie;
   return (
     <div>
-      <p>
-        {Title} ({Year})
-      </p>
+      {Title} ({Year})
     </div>
   );
 };

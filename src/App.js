@@ -16,13 +16,13 @@ const App = () => {
   }, [nomineeList]);
 
   return (
-    <div className="container mt-5">
+    <div className="container">
       <ErrorMessage
         setDisplayError={setDisplayError}
         displayError={displayError}
       />
-      <span
-        className="prose prose-xl m-3"
+      <div
+        className="prose prose-xl my-3"
         onClick={() => [
           setMovieList([]),
           setNomineeList([]),
@@ -30,9 +30,9 @@ const App = () => {
         ]}
       >
         The Shoppies
-      </span>
+      </div>
       <SearchBar setMovieList={setMovieList} />
-      <div className="flex flex-wrap-reverse justify-center">
+      <div className="flex flex-wrap justify-evenly">
         <MovieList
           props={movieList}
           setNomineeList={setNomineeList}

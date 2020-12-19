@@ -12,7 +12,7 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
         return (
           <div
             key={movie.imdbID}
-            className="flex flex-wrap items-center bg-gray-100 p-2 m-3"
+            className="flex flex-wrap-reverse items-center w-full bg-gray-100 p-2 my-2"
           >
             <button
               onClick={() =>
@@ -21,11 +21,11 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
                   : setNomineeList([...nomineeList, movie])
               }
               disabled={nomineeList.includes(movie)}
-              className={`m-2 px-1 py-1 text-xs font-small leading-6 text-center text-black uppercase transition bg-${
+              className={`m-2 px-1 py-1 text-xs font-small ${
                 nomineeList.includes(movie)
-                  ? `green-200 line-through`
-                  : `transparent`
-              } border-2 border-black rounded-full ripple focus:outline-none`}
+                  ? `bg-green-200 line-through`
+                  : `bg-transparent`
+              } leading-6 text-center text-black uppercase transition border-2 border-black rounded-full ripple focus:outline-none`}
             >
               Nominate
             </button>

@@ -29,7 +29,7 @@ const NomineeList = ({ nomineelist, setNomineeList, setDisplayError }) => {
     });
   }
   return (
-    <div className="my-3">
+    <div className="m-3">
       {nomineelist.length ? (
         <span className="prose prose-xl">Nominee list:</span>
       ) : (

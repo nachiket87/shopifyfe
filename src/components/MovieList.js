@@ -12,7 +12,7 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
         return (
           <div
             key={movie.imdbID}
-            className="flex flex-wrap-reverse items-center w-full bg-gray-100 p-2 my-2"
+            className="flex flex-wrap-reverse items-center bg-gray-100 px-12 py-4 m-2 md:p-4"
           >
             <button
               onClick={() =>
@@ -43,7 +43,7 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
       ) : (
         ""
       )}
-      <div>{displayMovies}</div>
+      <div className="grid grid-cols-1 md:grid-cols-2">{displayMovies}</div>
     </div>
   );
 };

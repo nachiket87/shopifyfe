@@ -15,7 +15,7 @@ const NomineeList = ({ nomineelist, setNomineeList, setDisplayError }) => {
       return (
         <div
           key={movie.imdbID}
-          className="flex flex-wrap items-center bg-gray-100 p-2 m-3"
+          className="flex flex-wrap items-center bg-gray-100 m-2 p-4"
         >
           <button
             onClick={() => [removeNominee(movie), setDisplayError(false)]}

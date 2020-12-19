@@ -12,7 +12,7 @@ const SearchBar = ({ setMovieList }) => {
 
   return (
     <input
-      className="w-100 lg:w-full bg-purple-white shadow rounded border-0 p-3"
+      className="w-full bg-purple-white shadow rounded border-0 p-3"
       id="search"
       type="text"
       placeholder="Type the name of a movie..."

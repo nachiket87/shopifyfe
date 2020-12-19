@@ -13,7 +13,10 @@ const NomineeList = ({ nomineelist, setNomineeList, setDisplayError }) => {
   if (nomineelist) {
     nominatedMovies = nomineelist.map((movie) => {
       return (
-        <div key={movie.imdbID} className="flex flex-wrap items-center">
+        <div
+          key={movie.imdbID}
+          className="flex flex-wrap items-center bg-gray-100 p-2 m-3"
+        >
           <button
             onClick={() => [removeNominee(movie), setDisplayError(false)]}
             className="m-3 p-1 rounded-full border-2 border-black flex items-center justify-center"
@@ -26,7 +29,7 @@ const NomineeList = ({ nomineelist, setNomineeList, setDisplayError }) => {
     });
   }
   return (
-    <div className="m-3">
+    <div className="my-3">
       {nomineelist.length ? (
         <span className="prose prose-xl">Nominee list:</span>
       ) : (

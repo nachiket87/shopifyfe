@@ -4,7 +4,7 @@ import React from "react";
 const ErrorMessage = ({ displayError, setDisplayError }) => {
   return (
     <div
-      className={`absolute inset-x-0 top-0 h-16 flex items-center bg-red-500 border-l-4 border-red-700 py-2 px-3 shadow-md mb-2 ${
+      className={`relative sticky top-0 inset-x-0 top-0 h-16 flex items-center bg-red-500 border-l-4 border-red-700 py-2 px-3 shadow-md mb-2 ${
         displayError ? `` : `hidden`
       }`}
     >

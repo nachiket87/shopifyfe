@@ -17,6 +17,10 @@ const App = () => {
 
   return (
     <div className="container mt-5">
+      <ErrorMessage
+        setDisplayError={setDisplayError}
+        displayError={displayError}
+      />
       <span
         className="prose prose-xl m-3"
         onClick={() => [
@@ -28,7 +32,7 @@ const App = () => {
         The Shoppies
       </span>
       <SearchBar setMovieList={setMovieList} />
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap-reverse justify-center">
         <MovieList
           props={movieList}
           setNomineeList={setNomineeList}
@@ -41,10 +45,6 @@ const App = () => {
           setDisplayError={setDisplayError}
         />
       </div>
-      <ErrorMessage
-        setDisplayError={setDisplayError}
-        displayError={displayError}
-      />
     </div>
   );
 };

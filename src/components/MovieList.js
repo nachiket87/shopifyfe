@@ -10,7 +10,10 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
     if (movieList) {
       displayMovies = movieList.map((movie) => {
         return (
-          <div key={movie.imdbID} className="flex flex-wrap items-center">
+          <div
+            key={movie.imdbID}
+            className="flex flex-wrap items-center bg-gray-100 p-2 m-3"
+          >
             <button
               onClick={() =>
                 nomineeList.length === 5

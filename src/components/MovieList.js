@@ -5,6 +5,14 @@ import Movie from "./Movie";
 const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
   let movieList = [];
   let displayMovies = [];
+  const checkMovieInList = (movie) => {
+    for (const nominee of nomineeList) {
+      if (nominee.imdbID === movie.imdbID) {
+        return true;
+      }
+    }
+    return false;
+  };
   if (props) {
     movieList = props.Search;
     if (movieList) {
@@ -20,9 +28,9 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
                   ? setDisplayError(true)
                   : setNomineeList([...nomineeList, movie])
               }
-              disabled={nomineeList.includes(movie)}
+              disabled={checkMovieInList(movie)}
               className={`m-2 px-1 py-1 text-xs ${
-                nomineeList.includes(movie)
+                checkMovieInList(movie)
                   ? `bg-green-200 line-through`
                   : `bg-transparent`
               } hover:bg-green-100 leading-6 text-center text-black uppercase transition border-2 border-black rounded-full ripple focus:outline-none`}

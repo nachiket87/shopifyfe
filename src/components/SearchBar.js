@@ -6,7 +6,7 @@ import { useDebouncedCallback } from "use-debounce";
 const SearchBar = ({ setMovieList }) => {
   const debounced = useDebouncedCallback((value) => {
     if (value) {
-      fetchData(value, setMovieList);
+      fetchData(value.trim(), setMovieList);
     }
   }, 200);
 

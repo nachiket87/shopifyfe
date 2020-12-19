@@ -21,11 +21,11 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
                   : setNomineeList([...nomineeList, movie])
               }
               disabled={nomineeList.includes(movie)}
-              className={`m-2 px-1 py-1 text-xs font-small ${
+              className={`m-2 px-1 py-1 text-xs ${
                 nomineeList.includes(movie)
                   ? `bg-green-200 line-through`
                   : `bg-transparent`
-              } leading-6 text-center text-black uppercase transition border-2 border-black rounded-full ripple focus:outline-none`}
+              } hover:bg-green-100 leading-6 text-center text-black uppercase transition border-2 border-black rounded-full ripple focus:outline-none`}
             >
               Nominate
             </button>

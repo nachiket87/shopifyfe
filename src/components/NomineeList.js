@@ -15,11 +15,11 @@ const NomineeList = ({ nomineelist, setNomineeList, setDisplayError }) => {
       return (
         <div
           key={movie.imdbID}
-          className="flex flex-wrap items-center bg-gray-100 m-2 p-4"
+          className="flex flex-wrap items-center bg-gray-100 px-5 py-2 m-2 md:p-4 md:px-2"
         >
           <button
             onClick={() => [removeNominee(movie), setDisplayError(false)]}
-            className="m-3 p-1 rounded-full border-2 border-black flex items-center justify-center"
+            className="m-3 p-1 rounded-full border-2 border-black flex hover:bg-red-200 text-xs"
           >
             X
           </button>

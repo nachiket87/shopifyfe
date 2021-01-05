@@ -10,7 +10,7 @@ const App = () => {
   const [displayError, setDisplayError] = useState(false);
 
   useEffect(() => {
-    if (nomineeList.length === 5) {
+    if (nomineeList.length > 5) {
       setDisplayError(true);
     }
   }, [nomineeList]);

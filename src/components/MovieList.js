@@ -5,6 +5,19 @@ import Movie from "./Movie";
 const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
   let movieList = [];
   let displayMovies = [];
+  let newList = [];
+  const nachiket = (movie) => {
+    if (checkMovieInList(movie)) {
+      newList = nomineeList.filter((nominee) => {
+        return nominee.imdbID != movie.imdbID;
+      });
+      setNomineeList([...newList]);
+    } else {
+      nomineeList.length === 5
+        ? setDisplayError(true)
+        : setNomineeList([...nomineeList, movie]);
+    }
+  };
   const checkMovieInList = (movie) => {
     for (const nominee of nomineeList) {
       if (nominee.imdbID === movie.imdbID) {
@@ -23,12 +36,7 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
             className="flex flex-wrap-reverse items-center bg-gray-100 px-12 py-4 m-2 md:p-4"
           >
             <button
-              onClick={() =>
-                nomineeList.length === 5
-                  ? setDisplayError(true)
-                  : setNomineeList([...nomineeList, movie])
-              }
-              disabled={checkMovieInList(movie)}
+              onClick={() => nachiket(movie)}
               className={`m-2 px-1 py-1 text-xs ${
                 checkMovieInList(movie)
                   ? `bg-green-200 line-through`

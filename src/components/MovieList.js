@@ -42,6 +42,7 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
                   ? `bg-green-200 line-through`
                   : `bg-transparent`
               } hover:bg-green-100 leading-6 text-center text-black uppercase transition border-2 border-black rounded-full ripple focus:outline-none`}
+              id="movieButton"
             >
               Nominate
             </button>
@@ -55,7 +56,9 @@ const MovieList = ({ props, setNomineeList, nomineeList, setDisplayError }) => {
   return (
     <div className="m-3">
       {displayMovies.length ? (
-        <span className="prose prose-xl">Search Results:</span>
+        <span className="prose prose-xl" id="search-results">
+          Search Results:
+        </span>
       ) : (
         ""
       )}
